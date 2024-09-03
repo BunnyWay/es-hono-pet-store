@@ -1,5 +1,5 @@
 import { addNewPet, newPet } from "../domain/pets.ts";
-import { App, createRoute, z } from "../infrastructure/mod.ts";
+import { App, createRoute } from "../infrastructure/mod.ts";
 import { State } from "./state.ts";
 import { petSchema } from "./ty.ts";
 

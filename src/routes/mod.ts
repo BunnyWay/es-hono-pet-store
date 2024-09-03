@@ -1,5 +1,4 @@
 import { App } from "../infrastructure/mod.ts";
-import { petStore } from "../domain/pets.ts";
 import { State } from "./state.ts";
 import { addListPetsRoutes } from "./list_pets.ts";
 import { addCreatePetRoute } from "./create_pet.ts";

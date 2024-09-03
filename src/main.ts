@@ -10,7 +10,7 @@ init({ store: petStore })(app);
 const listener = BunnySDK.net.tcp.unstable_new();
 console.log("Listening on: ", BunnySDK.net.tcp.toString(listener));
 BunnySDK.net.http.serve(
-  async (req) => {
+  (req) => {
     console.log(`[INFO]: ${req.method} - ${req.url}`);
     return app.fetch(req);
   },

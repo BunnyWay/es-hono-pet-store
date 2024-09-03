@@ -1,0 +1,38 @@
+name: Release Changeset
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release:
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+
+    if: github.repository == 'BunnyWay/es-hono-pet-store'
+
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.BUNNY_GITHUB }}
+
+      - name: Setup Javascript
+        uses: ./.github/actions/setup-project
+
+      - name: Create Release Pull Request
+        uses: changesets/action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.BUNNY_GITHUB }}
+        with:
+          publish: "pnpm run ci:publish"
+          version: "pnpm run ci:version"
+          title: "🎉 Release"
+          createGithubReleases: true

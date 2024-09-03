@@ -6,7 +6,7 @@ This templates demonstrates a basic Pet Store API for Bunny using a local `Deno`
 > fledged example with `node` instead!
 
 This templated script is currently deployed
-[here](https://es-hono-pet-store-9ww3g.b-cdn.net/).
+[here](https://es-hono-pet-store-9ww3g.b-cdn.net/swagger).
 
 ## Setup
 
@@ -28,10 +28,26 @@ We also use `pnpm` to use `changeset`.
 
 ## Changeset
 
-In this template, we handle versionning with [changeset](https://github.com/changesets/changesets), 
-each time you do a change, you'll need to indicate the kind of changes you are 
-doing so we can have the auto-release process ongoing by doing:
+This template uses [changeset](https://github.com/changesets/changesets) for 
+version management. Changeset helps track and document changes in your project, 
+making it easier to manage releases and generate changelogs.
 
-```
-pnpm changeset
-```
+When you make changes to the project, you should create a changeset to describe
+those changes:
+
+1. Run the following command:
+   ```
+   pnpm changeset
+   ```
+2. Follow the prompts to select the type of change (major, minor, or patch) and provide a brief description.
+3. Commit the generated changeset file along with your code changes.
+
+This process ensures that all modifications are properly documented and 
+versioned, facilitating smoother releases and better communication about 
+project updates.
+
+When you merge a pull request that includes a changeset, it will automatically 
+create an associated pull request to release your changes. 
+
+This new pull request will trigger the release process of the script to your
+PullZone in Bunny.

@@ -51,3 +51,8 @@ create an associated pull request to release your changes.
 
 This new pull request will trigger the release process of the script to your
 PullZone in Bunny.
+
+> This behavior is disabled by default, every pushes on main are now pushed to
+> Bunny directly.
+> You can enable this pattern again by updating this
+> [action](./.github/workflows/on-merge.yml)

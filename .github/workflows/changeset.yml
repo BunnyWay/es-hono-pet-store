@@ -14,8 +14,6 @@ jobs:
       issues: write
       pull-requests: write
 
-    if: github.repository == 'BunnyWay/es-hono-pet-store'
-
     name: Release
     runs-on: ubuntu-latest
     steps:

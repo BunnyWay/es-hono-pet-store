@@ -12,6 +12,10 @@ on:
     branches:
       - 'main'
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   publish:
     # To ensure you only run this action when closing a Release PR, you should

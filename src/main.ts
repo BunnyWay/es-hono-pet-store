@@ -1,4 +1,4 @@
-import * as BunnySDK from "https://esm.sh/@bunny.net/edgescript-sdk@0.10.0";
+import * as BunnySDK from "https://esm.sh/@bunny.net/edgescript-sdk@0.12.0";
 
 import { init } from "./routes/mod.ts";
 import { app } from "./infrastructure/mod.ts";
